@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Food By Natalie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SOUL FOOD BY <span>NATALIE</span></div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+
+        </div>
+
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        
+        <section class="cart-dropdown" id="cart-section" style="display: none;">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: &euro;<span id="total-price">0</span></p>
+            <button class="placeOrderbtn" onclick="placeOrder()">Place Order</button>
+        </section>
+
+       
+    </nav>
+
+    <!-- navbar-end........................................... -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-contant">
+            <h1>Delicious Food Is Waiting For You</h1>
+
+            <p>
+                Indulge in a culinary journey where elegance meets flavor. Our carefully curated menu showcases a symphony of gourmet dishes, each crafted with the finest ingredients and presented with artistic precision. From vibrant appetizers to decadent desserts, every plate is a testament to our passion for exceptional dining. Experience the perfect blend of taste, texture, and visual delight that transforms every meal into a memorable masterpiece.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Food Menu</a>
+                <a href="https://wa.me/254113815382?text=Hello%20Natalie!%20I'd%20like%20to%20place%20an%20order" target="_blank" class="btn btn-secondary">Place an Order</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/baked_chicken.png" alt="panfried" class="rotating">
+        </div>
+    </section>
+
+
+    <!-- hero-end........................................... -->
+
+      <!--PROTEINS-->
+    <section class="top-list" id="menu">
+
+        <h2>Proteins</h2>
+        <p class="our"><h4>Enjoy rich flavors and perfect textures.</h4></p>
+
+        <div class="food-card">
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/honey_garlic_salmon.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Honey Garlic Salmon</h3>
+                <p class="food-description">Perfectly seared salmon glazed with a rich honey-garlic sauce, offering a sweet and savory flavor in every bite.</p>
+                <p class="food-price"> &euro;18</p>
+                <button class="add-to-cart" data-name="Honey Garlic Salmon" data-price="18">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/ground_beef.png" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Ground Beef</h3>
+                <p class="food-description">A well-cooked ground beef is rich, savory, and tender, with perfectly browned edges that enhance its juicy flavor.</p>
+                <p class="food-price">&euro;14</p>
+                <button class="add-to-cart" data-name="Ground Beef" data-price="14">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/garlic_butter_steak.png"alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Garlic Butter Steak Bites</h3>
+                <p class="food-description">Tender, juicy steak bites seared to perfection and coated in rich, buttery garlic sauce.</p>
+                <p class="food-price">&euro;16</p>
+                <button class="add-to-cart" data-name="Garlic Butter Steak Bites" data-price="16">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/coconut_curry_mung_beans.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Coconut Curry Mung Beans</h3>
+                <p class="food-description">A well-cooked ground beef is rich, savory, and tender, with perfectly browned edges that enhance its juicy flavor.</p>
+                <p class="food-price">&euro;12</p>
+
+                <button class="add-to-cart" data-name="Coconut Curry Mung Beans" data-price="12">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/baked_chicken.png" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Baked Chicken</h3>
+                <p class="food-description">Succulent chicken baked to golden perfection, seasoned with herbs for a flavorful finish.</p>
+                <p class="food-price">&euro;13</p>
+
+                <button class="add-to-cart" data-name="Baked Chicken" data-price="13">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/pan_fried_sea_bass.png" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Pan Fried Sea Bass</h3>
+                <p class="food-description">Delicately pan-fried sea bass with a crispy skin and tender, flaky interior.</p>
+                <p class="food-price">&euro;15</p>
+
+                <button class="add-to-cart" data-name="Pan Fried Sea Bass" data-price="15">Add to Cart</button>
+            </div>
+
+        </div>
+    
+    </section>
+
+    <!--VEGGIES-->
+
+    <section class="top-list" id="menu">
+
+        <h2>Veggies</h2>
+        <p class="our"><h4>Savor fresh, vibrant flavors with crisp textures and savory seasonings.</h4></p>
+
+        <div class="food-card">
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/sauteed_spinach.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Sauteed Spinach</h3>
+                <p class="food-description">Tender spinach cooked to perfection with a hint of garlic and seasoning.</p>
+                <p class="food-price"> &euro;</p>
+
+                <button class="add-to-cart" data-name="Sauteed Spinach" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/sweet_potatoes.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Sweet Potatoes</h3>
+                <p class="food-description">Soft, caramelized bites with a naturally sweet and rich flavor.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Sweet Potatoes" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/string_beans.jpg"alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">String Beans</h3>
+                <p class="food-description">Crisp and tender with a fresh, slightly sweet flavor and a satisfying snap.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="String Beans" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/broccoli.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Broccoli</h3>
+                <p class="food-description">Crisp, green florets steamed or sautéed for a fresh, earthy taste.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Broccoli" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/boiled_corn.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Boiled Corn</h3>
+                <p class="food-description">Juicy and golden kernels with a naturally sweet crunch.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Boiled Corn" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/zucchini.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Zucchini</h3>
+                <p class="food-description">Lightly sauteed or grilled for a tender texture and mild, savory flavor.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Zucchini" data-price="">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!--SIDES-->
+
+
+    <section class="top-list" id="menu">
+
+        <h2>Sides</h2>
+        <p class="our"><h4>Wholesome, hearty, and delicious.</h4></p>
+
+        <div class="food-card">
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/white_rice.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">White Rice</h3>
+                <p class="food-description">Light, fluffy grains with a soft texture and delicate taste</p>
+                <p class="food-price"> &euro;</p>
+
+                <button class="add-to-cart" data-name="White Rice" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/butter_pasta.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Butter Pasta</h3>
+                <p class="food-description">Smooth and tender pasta coated in rich, creamy butter.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Butter Pasta" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/quinoa.jpg"alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Quinoa</h3>
+                <p class="food-description">Nutty and fluffy with a slight crunch and earthy flavor.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Quinoa" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/mashed_potatoes.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Mashed Potatoes</h3>
+                <p class="food-description">Creamy, smooth, and buttery with a comforting richness.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Mashed Potatoes" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/veggie_rice.jpg" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Veggie Rice</h3>
+                <p class="food-description">Fragrant rice loaded with colorful vegetables for a fresh, savory taste.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Veggie Rice" data-price="">Add to Cart</button>
+            </div>
+
+            <div class="food">
+                <div class="food-image">
+                    <img src="images/yellow_curry_rice.png" alt="food-1">
+                </div>
+
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <h3 class="food-name">Yellow Curry Rice</h3>
+                <p class="food-description">Aromatic and vibrant rice infused with warm curry spices.</p>
+                <p class="food-price">&euro;</p>
+
+                <button class="add-to-cart" data-name="Yellow Curry Rice" data-price="">Add to Cart</button>
+
+                
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- food-card-end........................................... -->
+
+    <section class="features" id="features">
+
+        <h2>Why Choose Us</h2>
+        <p class="Our">Experience the Difference</p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feauture-icons">
+                    <i class="fas fa-truck-fast"></i>
+                </div>
+                <h3>Fast Delivery</h3>
+                <p>Get your meals delivered fresh and fast, ensuring you enjoy every bite without the wait.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feauture-icons">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Fresh Food</h3>
+                <p>Our dishes are made from the finest ingredients, prepared to perfection for a rich and satisfying taste.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feauture-icons">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>We're here for you around the clock ready to assist with your orders, inquiries, and special requests.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feauture-icons">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Special Offers</h3>
+                <p>Enjoy amazing deals and discounts designed to give you the best value for your favorite meals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- feature-card-end........................................... -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+            <div class="footer-section">
+
+                <div class="social-links">
+
+                    <a href="#" class="social">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <a href="#" class="social">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- footer-section-2............................ -->
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </div>
+
+            <!-- footer-section-3............................ -->
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+
+                <ul class="contant-info">
+
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Delivery in Pireaus and area close to Pireaus</span>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+306944557508</span>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>soulfoodbynat@gmail.com</span>
+                    </li>
+
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Orders Mon-Fri 6PM</span>
+                        <span>Pickup Every Monday 9:00AM-12NOON</span>
+                    </li>
+                </ul>
+            </div>
+
+            
+
+          
+            </div>
+        </div>
+
+        <!-- footer-sections-and-content-end.............................. -->
+
+        <div class="footer-bottom">
+            <p>&copy: SOUL FOOD BY NATALIE 2025. ALL rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Condition</a>
+            </div>
+        </div>
+        
+    </footer>
+
+
+    <script src="scrip.js"></script>
+</body>
+
+</html>
