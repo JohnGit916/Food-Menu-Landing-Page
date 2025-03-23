@@ -12,52 +12,64 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">SOUL FOOD BY <span>NATALIE</span></div>
+    <div class="logo">SOUL FOOD BY <span>NATALIE</span></div>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
+    <div class="nav-links">
+        <a href="#home">Home</a>
 
+        <div class="dropdown">
+            <a href="#menu" class="dropdown-toggle">Menu</a>
+            <div class="dropdown-menu">
+                <a href="#proteins">Proteins</a>
+                <a href="#veggies">Veggies</a>
+                <a href="#sides">Sides</a>
+            </div>
         </div>
 
-        <div class="cart-icon" onclick="toggleCart()">
-            🛒 <span id="cart-count">0</span>
-        </div>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+    </div>
 
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
 
-        
-        <section class="cart-dropdown" id="cart-section" style="display: none;">
-            <h2>Your Cart</h2>
-            <ul id="cart-items"></ul>
-            <p>Total: &euro;<span id="total-price">0</span></p>
-            <button class="placeOrderbtn" onclick="placeOrder()">Place Order</button>
-        </section>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-       
-    </nav>
-
+    <section class="cart-dropdown" id="cart-section" style="display: none;">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: &euro;<span id="total-price">0</span></p>
+        <button class="placeOrderbtn" onclick="placeOrder()">Place Order</button>
+    </section>
+</nav>
     <!-- navbar-end........................................... -->
 
     <section class="hero" id="home">
 
         <div class="hero-contant">
-            <h1>Delicious Food Is Waiting For You</h1>
+            <h1>Meal prep made easy so you can savour the moment</h1>
 
             <p>
-                Indulge in a culinary journey where elegance meets flavor. Our carefully curated menu showcases a symphony of gourmet dishes, each crafted with the finest ingredients and presented with artistic precision. From vibrant appetizers to decadent desserts, every plate is a testament to our passion for exceptional dining. Experience the perfect blend of taste, texture, and visual delight that transforms every meal into a memorable masterpiece.
+                Customize your meal just the way you like it! Pick one <a href="#proteins">Proteins</a>, one <a href="#sides">Side</a> and one <a href="#veggies">Veggie</a> for a fresh, flavorful, and perfectly balanced dish made with love and ready for you to enjoy.
             </p>
 
             <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">Food Menu</a>
-                <a href="https://wa.me/254113815382?text=Hello%20Natalie!%20I'd%20like%20to%20place%20an%20order" target="_blank" class="btn btn-secondary">Place an Order</a>
+                <div class="food-menu-dropdown">
+                    <a href="#menu" class="btn btn-primary">Food Menu</a>
+                    <div class="food-menu-options">
+                        <a href="#proteins">Proteins</a>
+                        <a href="#veggies">Veggies</a>
+                        <a href="#sides">Sides</a>
+                    </div>
+                </div>
+                <a href="https://wa.me/306944557508?text=Hello%20Natalie!%20I'd%20like%20to%20place%20an%20order" target="_blank" class="btn btn-secondary">Place an Order</a>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="images/baked_chicken.png" alt="panfried" class="rotating">
+            <img src="images/SOUL.png" alt="panfried" class="hero-logo">
+            <div class="smoke"></div>
         </div>
     </section>
 
@@ -65,7 +77,7 @@
     <!-- hero-end........................................... -->
 
       <!--PROTEINS-->
-    <section class="top-list" id="menu">
+    <section class="top-list" id="proteins">
 
         <h2>Proteins</h2>
         <p class="our"><h4>Enjoy rich flavors and perfect textures.</h4></p>
@@ -195,7 +207,7 @@
 
     <!--VEGGIES-->
 
-    <section class="top-list" id="menu">
+    <section class="top-list" id="veggies">
 
         <h2>Veggies</h2>
         <p class="our"><h4>Savor fresh, vibrant flavors with crisp textures and savory seasonings.</h4></p>
@@ -217,7 +229,7 @@
 
                 <h3 class="food-name">Sauteed Spinach</h3>
                 <p class="food-description">Tender spinach cooked to perfection with a hint of garlic and seasoning.</p>
-                <p class="food-price"> &euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Sauteed Spinach" data-price="">Add to Cart</button>
             </div>
@@ -237,7 +249,7 @@
 
                 <h3 class="food-name">Sweet Potatoes</h3>
                 <p class="food-description">Soft, caramelized bites with a naturally sweet and rich flavor.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Sweet Potatoes" data-price="">Add to Cart</button>
             </div>
@@ -257,7 +269,7 @@
 
                 <h3 class="food-name">String Beans</h3>
                 <p class="food-description">Crisp and tender with a fresh, slightly sweet flavor and a satisfying snap.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="String Beans" data-price="">Add to Cart</button>
             </div>
@@ -277,7 +289,7 @@
 
                 <h3 class="food-name">Broccoli</h3>
                 <p class="food-description">Crisp, green florets steamed or sautéed for a fresh, earthy taste.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Broccoli" data-price="">Add to Cart</button>
             </div>
@@ -297,7 +309,7 @@
 
                 <h3 class="food-name">Boiled Corn</h3>
                 <p class="food-description">Juicy and golden kernels with a naturally sweet crunch.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Boiled Corn" data-price="">Add to Cart</button>
             </div>
@@ -317,7 +329,7 @@
 
                 <h3 class="food-name">Zucchini</h3>
                 <p class="food-description">Lightly sauteed or grilled for a tender texture and mild, savory flavor.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Zucchini" data-price="">Add to Cart</button>
             </div>
@@ -328,7 +340,7 @@
     <!--SIDES-->
 
 
-    <section class="top-list" id="menu">
+    <section class="top-list" id="sides">
 
         <h2>Sides</h2>
         <p class="our"><h4>Wholesome, hearty, and delicious.</h4></p>
@@ -350,7 +362,7 @@
 
                 <h3 class="food-name">White Rice</h3>
                 <p class="food-description">Light, fluffy grains with a soft texture and delicate taste</p>
-                <p class="food-price"> &euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="White Rice" data-price="">Add to Cart</button>
             </div>
@@ -370,7 +382,7 @@
 
                 <h3 class="food-name">Butter Pasta</h3>
                 <p class="food-description">Smooth and tender pasta coated in rich, creamy butter.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Butter Pasta" data-price="">Add to Cart</button>
             </div>
@@ -390,7 +402,7 @@
 
                 <h3 class="food-name">Quinoa</h3>
                 <p class="food-description">Nutty and fluffy with a slight crunch and earthy flavor.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Quinoa" data-price="">Add to Cart</button>
             </div>
@@ -410,7 +422,7 @@
 
                 <h3 class="food-name">Mashed Potatoes</h3>
                 <p class="food-description">Creamy, smooth, and buttery with a comforting richness.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Mashed Potatoes" data-price="">Add to Cart</button>
             </div>
@@ -430,7 +442,7 @@
 
                 <h3 class="food-name">Veggie Rice</h3>
                 <p class="food-description">Fragrant rice loaded with colorful vegetables for a fresh, savory taste.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Veggie Rice" data-price="">Add to Cart</button>
             </div>
@@ -450,7 +462,7 @@
 
                 <h3 class="food-name">Yellow Curry Rice</h3>
                 <p class="food-description">Aromatic and vibrant rice infused with warm curry spices.</p>
-                <p class="food-price">&euro;</p>
+                <p class="food-price"></p>
 
                 <button class="add-to-cart" data-name="Yellow Curry Rice" data-price="">Add to Cart</button>
 

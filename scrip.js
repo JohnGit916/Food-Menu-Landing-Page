@@ -51,17 +51,44 @@ function toggleCart() {
 }
 
 
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+
+    // Mobile-specific dropdown toggle
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+    
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default link behavior
+                const dropdown = this.parentElement;
+    
+                // Toggle 'active' class for mobile dropdown visibility
+                dropdown.classList.toggle("active");
+            });
+        }
+    });
+    
 
 
 
 
-const cart = [];
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
             const name = button.getAttribute('data-name');
-            const price = parseFloat(button.getAttribute('data-price'));
-
+            let price = parseFloat(button.getAttribute('data-price'));
+    
+            // Assign price 0 if the item is from veggies or sides
+            if (['Sauteed Spinach', 'Sweet Potatoes', 'String Beans', 'Broccoli', 
+                'Boiled Corn', 'Zucchini', 'White Rice', 'Butter Pasta', 
+                'Quinoa', 'Mashed Potatoes', 'Veggie Rice', 'Yellow Curry Rice']
+                .includes(name)) {
+                price = 0;
+            }
+    
             const existingItem = cart.find(item => item.name === name);
             if (existingItem) {
                 existingItem.quantity++;
@@ -71,6 +98,15 @@ const cart = [];
             updateCart();
         });
     });
+    
+
+
+
+
+
+const cart = [];
+
+    
 
     function updateCart() {
         const cartItems = document.getElementById('cart-items');
@@ -83,7 +119,7 @@ const cart = [];
 
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = `${item.name} x${item.quantity} - &euro;${(item.price * item.quantity).toFixed(2)}`;
+            li.textContent = `${item.name} x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}`;
             cartItems.appendChild(li);
 
             total += item.price * item.quantity;
@@ -112,7 +148,9 @@ const cart = [];
         orderDetails += `Total: €${document.getElementById('total-price').textContent}`;
 
         const encodedMessage = encodeURIComponent(orderDetails);
-        const whatsappLink = `https://wa.me/254113815382?text=${encodedMessage}`;
+        const whatsappLink = `https://wa.me/306944557508?text=${encodedMessage}`;
 
         window.open(whatsappLink, '_blank');
     }
+
+    
