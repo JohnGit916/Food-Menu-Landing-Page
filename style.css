@@ -164,13 +164,28 @@ body::before {
     max-width: 100%;
 }
 
-/*.rotating {
+.logo-container {
+    height: 90px; /* Set a fixed height for the navbar */
+    width: 300px;
+    display: flex;
+    align-items: center; /* Align the logo vertically */
+}
+
+.logo-image {
+    max-height: 200%; /* Ensures the image scales proportionally within the navbar */
+    width: auto;      /* Maintain the image's aspect ratio */
+    transform: scale(1.5); /* Enlarges the logo without affecting the navbar height */
+    transform-origin: left center; /* Ensures the logo scales from the left side */
+}
+
+
+.rotating {
     width: 400px;
     height: 400px;
     animation: rotate 20s linear infinite;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
 }
-*/
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -258,8 +273,9 @@ body::before {
 .food-card {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
+    
 }
 
 .food {
@@ -322,7 +338,7 @@ body::before {
 
 }
 
-@media (max-width:768px) {
+@media (max-width:600px) {
     .food-card {
         grid-template-columns: 1fr;
         padding: 0.5rem;
@@ -741,7 +757,7 @@ body::before {
         flex-direction:column;
         background: linear-gradient(135deg, gold, rgba(229, 231, 235, 0.7)100%);
         position: absolute;
-        top: 70px; /* Adjust based on your navbar height */
+        top: 100px; /* Adjust based on your navbar height */
         width: 100%;
         left: 0;
         padding: 10px 0;
@@ -750,6 +766,9 @@ body::before {
 
     .nav-links.show {
         display: flex; /* Show nav links when hamburger is clicked */
+        
+        
+        
     }
 }
 
@@ -758,6 +777,7 @@ body::before {
 /* Dropdown Styling */
 .dropdown {
     position: relative;
+    
 }
 
 .dropdown-menu {
@@ -768,6 +788,7 @@ body::before {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     min-width: 150px;
     z-index: 999;
+    
 }
 
 .dropdown-menu a {
