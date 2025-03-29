@@ -126,7 +126,7 @@ const cart = [];
             itemCount += item.quantity;
         });
 
-        totalPrice.textContent = total.toFixed(2);
+        totalPrice.textContent = `KSh ${total.toFixed(2)}`;
         cartCount.textContent = itemCount;
     }
 
@@ -140,17 +140,18 @@ const cart = [];
             alert('Your cart is empty!');
             return;
         }
-
-        let orderDetails = "I would like to place an order:\n";
+    
+        let orderDetails = "Hello John...\nI would like to place an order:\n";
         cart.forEach(item => {
-            orderDetails += `${item.name} x${item.quantity} - €${(item.price * item.quantity).toFixed(2)}\n`;
+            orderDetails += `${item.name} x${item.quantity} - KSh ${(item.price * item.quantity).toFixed(2)}\n`;
         });
-        orderDetails += `Total: €${document.getElementById('total-price').textContent}`;
-
+        orderDetails += `Total: KSh ${document.getElementById('total-price').textContent}`;
+    
         const encodedMessage = encodeURIComponent(orderDetails);
-        const whatsappLink = `https://wa.me/306944557508?text=${encodedMessage}`;
-
+        const whatsappLink = `https://wa.me/254113815382?text=${encodedMessage}`;
+    
         window.open(whatsappLink, '_blank');
     }
+    
 
     
